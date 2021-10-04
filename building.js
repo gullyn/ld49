@@ -121,7 +121,7 @@ var Shop = /** @class */ (function (_super) {
         ctx.translate(rpx, rpy);
         ctx.rotate(this.angle + Math.PI);
         ctx.fillStyle = "rgb(100, 100, 100)";
-        if (Math.abs(rpx - mousePos.x) + Math.abs(rpy - mousePos.y) < 60) {
+        if (Math.abs(rpx - mousePos.x) + Math.abs(rpy - mousePos.y) < 60 && game.started) {
             game.shopTarget = this;
         }
         ctx.drawImage(game.shopTarget === this ? game.images["shop1"] : game.images["shop"], -64, -64, 128, 128);

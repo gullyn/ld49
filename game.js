@@ -235,14 +235,16 @@ var Game = /** @class */ (function () {
             asteroid.render(this.ctx, this.mousePos);
         }
         if (!this.started) {
+            this.ctx.drawImage(this.images["target-grey"], this.mousePos.x - 32, this.mousePos.y - 32);
+            this.ctx.font = "50px Courier New";
+            this.ctx.textAlign = "center";
+            this.ctx.fillStyle = "white";
+            this.ctx.fillText("The Dark Void", this.canvas.width / 2, this.canvas.height / 2 - 200);
+            this.ctx.font = "40px Courier New";
+            this.ctx.fillText("Press any key to start", this.canvas.width / 2, this.canvas.height / 2);
             this.blockOpacity = 1 - (Math.abs(30 - this.transitionFrame) / 30);
             ctx.fillStyle = "rgba(0, 0, 0, " + this.blockOpacity + ")";
             ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-            this.ctx.drawImage(this.images["target-grey"], this.mousePos.x - 32, this.mousePos.y - 32);
-            this.ctx.font = "40px Courier New";
-            this.ctx.textAlign = "center";
-            this.ctx.fillStyle = "white";
-            this.ctx.fillText("Press any key to start", this.canvas.width / 2, this.canvas.height / 2);
             return;
         }
         for (var _f = 0, _g = this.bullets; _f < _g.length; _f++) {

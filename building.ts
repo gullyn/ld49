@@ -157,7 +157,7 @@ class Shop extends Building
 		ctx.translate(rpx, rpy);
 		ctx.rotate(this.angle + Math.PI);
 		ctx.fillStyle = "rgb(100, 100, 100)";
-		if (Math.abs(rpx - mousePos.x) + Math.abs(rpy - mousePos.y) < 60)
+		if (Math.abs(rpx - mousePos.x) + Math.abs(rpy - mousePos.y) < 60 && game.started)
 		{
 			game.shopTarget = this;
 		}
